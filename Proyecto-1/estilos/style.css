@@ -1,0 +1,138 @@
+/*Estilos-----------------------------------------------*/
+* {
+    font-family: 'Courier New', Courier, monospace;
+    background: rgb(246, 242, 212);
+    color: rgb(34, 87, 126);
+}
+
+
+/*Estilos-----------------------------------------------*/
+
+/*Encabezado--------------------------------------------*/
+
+.encabezado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+/*.logo>img {
+    width: 140px;
+    animation: 3s infinite logo_anim;
+    background: transparent;
+}*/
+
+.marca{
+    width: 100%;
+    text-align: center;
+}
+/*@keyframes logo_anim {
+    0% {transform: rotateZ(0deg);}
+    100% {transform: rotateZ(360deg);}
+}*/
+
+/*Encabezado--------------------------------------------*/
+
+/*Menu--------------------------------------------------*/
+.contenedor_menu {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(149, 209, 204);
+    margin: 10px;
+    border-radius: 10px;
+    flex-wrap: wrap;
+}
+
+.contenedor_menu div {
+    margin: 10px;
+    color: rgb(38, 87, 124);
+    background-color: rgb(149, 209, 204);
+}
+
+.contenedor_menu div a:hover {
+    color: rgb(229, 86, 4);
+    background-color: rgb(85, 132, 172);
+    font-weight: bolder;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 5px;
+}
+
+.contenedor_menu div a {
+    color: rgb(85, 132, 172);
+    text-decoration: none;
+    background-color: rgb(149, 209, 204);
+    font-weight: bolder;
+    margin: 10px;
+    padding: 5px;
+}
+
+/*Menu--------------------------------------------------*/
+
+/*Pie --------------------------------------------------*/
+
+
+.pie p {
+    background-color: rgb(149, 209, 204);
+    margin: 5px;
+    padding: 0px;
+    border-radius: 10px;
+    /*text-decoration: none;*/
+}
+
+.pie a {
+    background-color: rgb(149, 209, 204);
+    margin: 5px;
+    padding: 0px;
+    border-radius: 10px;
+    /*text-decoration: none;*/
+}
+/*Pie --------------------------------------------------*/
+
+/*Contenedores Grid ------------------------------------*/
+
+.container {
+    display: grid;
+    grid-template: auto auto auto auto auto / auto auto auto;
+    grid-template-areas:
+    "header header header"
+    "nav nav nav"
+    "bienv bienv bienv"
+    "herra acla acla"
+    "footer footer footer";
+}
+
+.encabezado{grid-area: header;}
+.contenedor_menu{grid-area: nav;}
+.contenedor_article_1{
+    grid-area: bienv;
+    padding: 10px;
+    /*border: 2px solid black;*/
+    border-radius: 5px;
+}
+.contenedor_article_2{
+    grid-area: herra;
+    padding: 10px;
+    /*border: 2px solid black;*/
+    border-radius: 5px;
+}
+.contenedor_article_3{
+    grid-area: acla;
+    padding: 10px;
+    /*border: 2px solid black;*/
+    border-radius: 5px;
+}
+.pie{
+    grid-area: footer;
+    display: flex;
+    justify-content: center;
+    align-content: space-between;
+    background-color: rgb(149, 209, 204);
+    margin: 10px;
+    padding: 5px;
+    border-radius: 10px;
+    flex-wrap: wrap;
+}
+
+/*Contenedores Grid ------------------------------------*/
