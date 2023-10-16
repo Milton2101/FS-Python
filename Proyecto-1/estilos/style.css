@@ -98,27 +98,27 @@
     grid-template-areas:
     "header header header"
     "nav nav nav"
-    "bienv bienv bienv"
-    "herra acla acla"
+    "article_1 article_1 article_1"
+    "article_2 article_3 article_3"
     "footer footer footer";
 }
 
 .encabezado{grid-area: header;}
 .contenedor_menu{grid-area: nav;}
 .contenedor_article_1{
-    grid-area: bienv;
+    grid-area: article_1;
     padding: 10px;
     /*border: 2px solid black;*/
     border-radius: 5px;
 }
 .contenedor_article_2{
-    grid-area: herra;
+    grid-area: article_2;
     padding: 10px;
     /*border: 2px solid black;*/
     border-radius: 5px;
 }
 .contenedor_article_3{
-    grid-area: acla;
+    grid-area: article_3;
     padding: 10px;
     /*border: 2px solid black;*/
     border-radius: 5px;
