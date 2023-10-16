@@ -145,6 +145,8 @@
     gap: 20px 20px;
     justify-content:center;
     justify-items: center;
+    align-content: center;
+    align-items: center;
 }
 .cliente_1{
     grid-area: cliente_1;
@@ -174,7 +176,7 @@
     grid-area: cliente_9;
 }
 .cliente_1 img{
-    width: 300px;
+    width: 200px;
 }
 .cliente_2 img{
     width: 300px;
