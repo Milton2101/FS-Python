@@ -17,20 +17,20 @@
 
 }
 
-/*.logo>img {
-    width: 140px;
+.logo>img {
+    width: 100px;
     animation: 3s infinite logo_anim;
     background: transparent;
-}*/
+}
 
 .marca{
     width: 100%;
     text-align: center;
 }
-/*@keyframes logo_anim {
+@keyframes logo_anim {
     0% {transform: rotateZ(0deg);}
     100% {transform: rotateZ(360deg);}
-}*/
+}
 
 /*Encabezado--------------------------------------------*/
 
