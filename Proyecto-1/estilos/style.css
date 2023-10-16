@@ -134,5 +134,70 @@
     border-radius: 10px;
     flex-wrap: wrap;
 }
-
+.logos_flex{
+    display: grid;
+    grid-template: auto auto auto / auto auto auto;
+    grid-template-areas:
+    "cliente_1 cliente_2 cliente_3"
+    "cliente_4 cliente_5 cliente_6"
+    "cliente_7 cliente_8 cliente_9";
+    /*border: 2px solid black;*/
+    gap: 20px 20px;
+    justify-content:center;
+    justify-items: center;
+}
+.cliente_1{
+    grid-area: cliente_1;
+}
+.cliente_2{
+    grid-area: cliente_2;
+}
+.cliente_3{
+    grid-area: cliente_3;
+}
+.cliente_4{
+    grid-area: cliente_4;
+}
+.cliente_5{
+    grid-area: cliente_5;
+}
+.cliente_6{
+    grid-area: cliente_6;
+}
+.cliente_7{
+    grid-area: cliente_7;
+}
+.cliente_8{
+    grid-area: cliente_8;
+}
+.cliente_9{
+    grid-area: cliente_9;
+}
+.cliente_1 img{
+    width: 300px;
+}
+.cliente_2 img{
+    width: 300px;
+}
+.cliente_3 img{
+    width: 300px;
+}
+.cliente_4 img{
+    width: 300px;
+}
+.cliente_5 img{
+    width: 300px;
+}
+.cliente_6 img{
+    width: 300px;
+}
+.cliente_7 img{
+    width: 300px;
+}
+.cliente_8 img{
+    width: 300px;
+}
+.cliente_9 img{
+    width: 300px;
+}
 /*Contenedores Grid ------------------------------------*/
