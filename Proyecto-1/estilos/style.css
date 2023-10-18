@@ -376,3 +376,9 @@ button {
 button:hover {
     background-color: #0056b3;
 }
+
+.contenido {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
