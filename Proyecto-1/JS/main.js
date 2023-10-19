@@ -57,3 +57,4 @@ fetch('https://api.airvisual.com/v2/states?country=Argentina&key=c6b615ec-3d48-4
     // Maneja errores de la solicitud
     console.error('Error:', error);
   });
+
