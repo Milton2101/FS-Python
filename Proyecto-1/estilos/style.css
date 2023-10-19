@@ -328,13 +328,13 @@ h3 {
     margin: 20px 0;
 }
 
-/* Estilo para el formulario */
+/* Estilo para el formulario------------------------------------ */
 form {
     max-width: 600px;
     margin: 0 auto;
 }
 
-/* Estilo para las etiquetas de los campos */
+/* Estilo para las etiquetas de los campos ------------------------------------*/
 label {
     display: block;
     font-weight: bold;
@@ -342,7 +342,7 @@ label {
     color: #333;
 }
 
-/* Estilo para los campos de entrada de texto y área de texto */
+/* Estilo para los campos de textos------------------------------------ */
 input[type="text"],
 input[type="email"],
 textarea {
@@ -354,7 +354,7 @@ textarea {
     font-size: 16px;
 }
 
-/* Estilo para los mensajes de error */
+/* Estilo para los mensajes de error ------------------------------------*/
 .error-message {
     color: red;
     font-size: 14px;
@@ -362,7 +362,7 @@ textarea {
     display: none;
 }
 
-/* Estilo para el botón de envío */
+/* Estilo para el botón de envío------------------------------------ */
 button {
     background-color: #007bff;
     color: #fff;

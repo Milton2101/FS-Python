@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
     contactForm.addEventListener("submit", function(event) {
         let valid = true;
 
-        // Validar el campo Nombre
+        // Validar el campo Nombre------------------------------------
         const nombreInput = document.getElementById("nombre");
         const nombreError = document.getElementById("nombre-error");
         if (nombreInput.value.trim() === "") {
@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function() {
             nombreError.style.display = "none";
         }
 
-        // Validar el campo Correo Electrónico
+        // Validar el campo Correo Electrónico------------------------------------
         const emailInput = document.getElementById("email");
         const emailError = document.getElementById("email-error");
         const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function() {
             emailError.style.display = "none";
         }
 
-        // Validar el campo Mensaje
+        // Validar el campo Mensaje------------------------------------
         const mensajeInput = document.getElementById("mensaje");
         const mensajeError = document.getElementById("mensaje-error");
         if (mensajeInput.value.trim() === "") {
