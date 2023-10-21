@@ -391,15 +391,18 @@ button:hover {
 
 form{
     
-    min-height: 50px;
-    background: url(./2.JPG) no-repeat center center fixed;
+    min-height: auto;
+    max-width: auto;
+    width: auto;
+    background: url(./2.JPG) no-repeat left  ;
+    background-size: cover;
     
     }
 
     /* Estilo Api  */
 .contenedor_article_2-index{
     font-size: 23px;
-    width: 50%;
+    min width: 50%;
     margin: 0 auto;
     text-align: auto;
 }
