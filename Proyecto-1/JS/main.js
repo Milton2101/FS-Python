@@ -44,22 +44,3 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-async function fetchDateTimeFromIP() {
-    try {
-        const response = await fetch('http://worldtimeapi.org/api/ip');
-        if (!response.ok) {
-            throw new Error('Error al obtener los datos de la API');
-        }
-
-        const data = await response.json();
-        const datetime = new Date(data.datetime);
-
-        const formattedDateTime = `${datetime.getFullYear()}-${String(datetime.getMonth() + 1).padStart(2, '0')}-${String(datetime.getDate()).padStart(2, '0')} ${String(datetime.getHours()).padStart(2, '0')}:${String(datetime.getMinutes()).padStart(2, '0')}:${String(datetime.getSeconds()).padStart(2, '0')}`;
-
-        document.getElementById('currentDateTime').textContent = formattedDateTime;
-    } catch (error) {
-        console.error('Hubo un error al obtener la fecha y hora:', error);
-    }
-}
-
-window.onload = fetchDateTimeFromIP;
