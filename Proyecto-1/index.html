@@ -70,15 +70,15 @@
         </article>
 
         
-        <article class="contenedor_article_2">
+        <article class="contenedor_article_2-index">
             <div>
                 <h3>Estado del tiempo</h3>
-                
+                <h4><ul>Buenos Aires</ul></h4>
                 <p id="weather-data"> Cargando datos del clima... </p>
             </div>
         </article>
         <script>
-            fetch('https://wttr.in/TuCiudad?format=%C+%t+%w+%m')
+            fetch('https://wttr.in/BuenosAires?format=%C+%t+%w+%m')
                 .then(response => response.text())
                 .then(data => {
                     const weatherData = document.getElementById('weather-data');

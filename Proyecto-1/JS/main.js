@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function() {
             nombreError.style.display = "none";
         }
 
-        // Validar el campo Correo Electrónico------------------------------------
+        // // Validar el campo Correo Electrónico------------------------------------
         const emailInput = document.getElementById("email");
         const emailError = document.getElementById("email-error");
         const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
