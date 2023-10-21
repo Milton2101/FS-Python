@@ -444,6 +444,8 @@ form {
 }
 .contenedor_article_4{
     grid-area: article_4;
+    margin-left: 30px;
+    padding: 10px;
 }
 .contenedor_article_5{
     grid-area: article_5;
