@@ -44,17 +44,3 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-
-//http://api.airvisual.com/v2/states?country={{COUNTRY_NAME}}&key={{YOUR_API_KEY}}
-
-fetch('https://api.airvisual.com/v2/states?country=Argentina&key=c6b615ec-3d48-4c3e-bbeb-97800b38fae2')
-  .then(response => response.json()) // Parsea la respuesta como JSON
-  .then(data => {
-    // Manipula los datos recibidos de la API
-    console.log(data);
-  })
-  .catch(error => {
-    // Maneja errores de la solicitud
-    console.error('Error:', error);
-  });
-
