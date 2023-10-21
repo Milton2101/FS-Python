@@ -9,27 +9,9 @@
     <link rel='stylesheet' type='text/css' media='screen' href=".\estilos/style.css">
     <link rel="shortcut icon" href="Imagenes/Logo.ico" type="image/x-icon">
     <script src='.\JS/main.js'></script>
-    <style>
-        .container {
-            display: flex;
-            justify-content: space-between;
-        }
-        
-        .form-container {
-            width: 70px; 
-        }
-        
-        .image-container {
-            width: auto;
-            height: auto;
-            text-align: right;
-            opacity: 0.9;
-        }
-    </style>
-
+</head>
 <body>
-
-    <div class="container">
+    <div class="container_form">
         <header class="encabezado">
             <div class="logo">
                 <img src=".\imagenes/Logo.png" alt="Logo">
@@ -47,39 +29,41 @@
             <div><a href=".\clientes.html">Clientes</a></div>
             <div><a href=".\formulario.html">Contacto</a></div>
         </nav>
-        <link rel="stylesheet" type="text/css" href="estilos/style.css">
-
-      <div> 
-        
-        <form id="contact-form">
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre" required>
-            <div id="nombre-error" class="error-message"></div>
-    
-            <label for="email">Correo Electrónico:</label>
-            <input type="email" id="email" name="email" required>
-            <div id="email-error" class="error-message"></div>
-    
-            <label for="mensaje">Mensaje:</label>
-            <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
-            <div id="mensaje-error" class="error-message"></div>
-    
-            <button type="submit">Enviar</button>
-        </form>
-    
-        <script src="JS/main.js"></script>
- </div>
-        <div class="image-container">
-            <img height="400" src="Imagenes/artwork.png" alt="Edificio">
+        <div class="contenedor_article_4">
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium accusantium placeat laudantium rerum officia labore harum non ipsa esse, nesciunt delectus iste reprehenderit tempora earum velit eveniet. Deserunt, sed hic?</p>
         </div>
-    </div>
-
-        
-        </article>
+        <form id="contact-form" class="contenedor_article_5">
+            <div class="contenedor_form">
+                <div class="form_1">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" value="Ingrese su nombre aqui" required>
+                    <div id="nombre-error" class="error-message"></div>
+                </div>
+                <div class="form_2">
+                    <label for="email">Correo Electrónico:</label>
+                    <input type="email" id="email" name="email" value="Ingrese su email aqui" required>
+                    <div id="email-error" class="error-message"></div>
+                </div>
+                <div class="form_3">
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" rows="4" maxlength="140" placeholder="140 caracteres maximo" required></textarea>
+                <div id="mensaje-error" class="error-message"></div>
+                </div>
+                <div class="form_4">
+                    <button type="submit">Enviar</button>
+                </div>
+            </div>
+        </form>
+        <div class="contenedor_article_6">
+            <div class="image-container">
+                <img height="400" src="Imagenes/artwork.png" alt="Edificio">
+            </div>
+        </div>
         <footer class="pie">
             <p>Contacto: <a href="mailto:ferroinnova@consultores.com">ferroinnova@consultores.com</a></p>
             <p>Teléfono: <a href="tel:+5401112345678">+54 011 1234 5678</a></p>
-            <p>Torre Catalinas Plaza: <a href="https://maps.app.goo.gl/mchtM62uYrGJoVwn7" target="_blank">Ing. Enrique Butty 220, C1001 AFB, Buenos Aires</a></p>
+            <p>Torre Catalinas Plaza: <a href="https://maps.app.goo.gl/mchtM62uYrGJoVwn7" target="_blank">Ing. Enrique Butty
+                    220, C1001 AFB, Buenos Aires</a></p>
             <span class="fab fa-facebook"></span>
             <a href="https://www.facebook.com/">Facebook</a>
             <span class="fab fa-twitter"></span>

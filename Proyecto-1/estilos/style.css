@@ -122,21 +122,21 @@
     grid-area: article_1;
     padding: 10px;
     /*border: 2px solid black;*/
-    border-radius: 5px;
+    /*border-radius: 5px;*/
     /*background-color: green;*/
 }
 .contenedor_article_2{
     grid-area: article_2;
     padding: 10px;
     /*border: 2px solid black;*/
-    border-radius: 5px;
+    /*border-radius: 5px;*/
     /*background-color: red;*/
 }
 .contenedor_article_3{
     grid-area: article_3;
     padding: 10px;
     /*border: 2px solid black;*/
-    border-radius: 5px;
+    /*border-radius: 5px;*/
    /* background-color: yellow;*/
 }
 .pie{
@@ -341,11 +341,6 @@ h3 {
     margin: 20px 0;
 }
 
-/* Estilo para el formulario------------------------------------ */
-form {
-    max-width: 800px;
-    margin: 50 auto;
-}
 
 /* Estilo para las etiquetas de los campos ------------------------------------*/
 label {
@@ -396,16 +391,16 @@ button:hover {
     flex-wrap: wrap;
     justify-content: center;
 }
+
 /* fondo al formulario */
 
-form{
-    
+form {
+    /*max-width: 300px;*/
+    margin: auto auto;
     min-height: auto;
-    max-width: auto;
     width: auto;
-    background: url(./2.JPG) no-repeat left  ;
+    background: center / contain no-repeat url(./2.JPG)  ;
     background-size: cover;
-    
     }
 
     /* Estilo Api  */
@@ -414,4 +409,102 @@ form{
     min-width: 50%;
     margin: 0 auto;
     text-align: center;
+}
+/*
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-container {
+    width: 70px;
+}*/
+
+.image-container {
+    width: auto;
+    height: auto;
+    text-align: center;
+    opacity: 0.9;
+}
+
+.form_1{
+    grid-area: form1;
+    /*max-width: 50%;*/
+}
+.form_2{
+    grid-area: form2;
+    /*max-width: 50%;*/
+}
+.form_3{
+    grid-area: form3;
+    /*max-width: 50%;*/
+}
+.form_4{
+    grid-area: form4;
+}
+.contenedor_article_4{
+    grid-area: article_4;
+}
+.contenedor_article_5{
+    grid-area: article_5;
+}
+.contenedor_article_6{
+    grid-area: article_6;
+}
+.contenedor_form{
+    display: grid;
+    grid-template: auto auto auto auto/ 500px;
+    grid-template-areas:
+    "form1"
+    "form2"
+    "form3"
+    "form4";
+    border: 2px solid black;
+    gap: 5px 5px;
+    justify-content: left;
+    justify-items: left;
+    align-content: center;
+    align-items: center;
+    padding: 10px;
+    
+}
+
+@media (max-width: 10000px) {
+    .container_form {
+        display: grid;
+        grid-template: auto auto auto auto auto / 50% 50%;
+        grid-template-areas:
+        "header header"
+        "nav nav"
+        "article_4 article_4"
+        "article_5 article_6"
+        "footer footer";
+    }
+}
+
+@media (max-width: 1300px) {
+    .container_form {
+        display: grid;
+        grid-template: auto auto auto auto auto / 50% 50%;
+        grid-template-areas:
+        "header header"
+        "nav nav"
+        "article_4 article_4"
+        "article_5 article_6"
+        "footer footer";
+    }
+}
+
+@media (max-width: 1065px) {
+    .container_form {
+        display: grid;
+        grid-template: auto auto auto auto auto auto/ auto;
+        grid-template-areas:
+        "header"
+        "nav"
+        "article_4"
+        "article_5"
+        "article_6"
+        "footer";
+    }
 }
