@@ -46,7 +46,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
 async function fetchDateTimeFromIP() {
     try {
-        // Haciendo una petición a la API para obtener la fecha y hora basada en la IP del visitante
         const response = await fetch('http://worldtimeapi.org/api/ip');
         if (!response.ok) {
             throw new Error('Error al obtener los datos de la API');
@@ -55,15 +54,12 @@ async function fetchDateTimeFromIP() {
         const data = await response.json();
         const datetime = new Date(data.datetime);
 
-        // Formatear la fecha y hora al formato que desees. Aquí, como ejemplo, se utiliza el formato "YYYY-MM-DD HH:mm:ss"
         const formattedDateTime = `${datetime.getFullYear()}-${String(datetime.getMonth() + 1).padStart(2, '0')}-${String(datetime.getDate()).padStart(2, '0')} ${String(datetime.getHours()).padStart(2, '0')}:${String(datetime.getMinutes()).padStart(2, '0')}:${String(datetime.getSeconds()).padStart(2, '0')}`;
 
-        // Mostrar la fecha y hora en el div con id "currentDateTime"
         document.getElementById('currentDateTime').textContent = formattedDateTime;
     } catch (error) {
         console.error('Hubo un error al obtener la fecha y hora:', error);
     }
 }
 
-// Llamar a la función cuando se cargue el documento
 window.onload = fetchDateTimeFromIP;
