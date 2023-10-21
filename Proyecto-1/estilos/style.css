@@ -334,8 +334,8 @@ h3 {
 
 /* Estilo para el formulario------------------------------------ */
 form {
-    max-width: 600px;
-    margin: 0 auto;
+    max-width: 800px;
+    margin: 50 auto;
 }
 
 /* Estilo para las etiquetas de los campos ------------------------------------*/
@@ -350,11 +350,11 @@ label {
 input[type="text"],
 input[type="email"],
 textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    width: 200%;
+    padding: 15px;
+    margin-bottom: 30px;
+    border: 1px solid #000000;
+    border-radius: 10px;
     font-size: 16px;
 }
 
@@ -390,8 +390,10 @@ button:hover {
 /* fondo al formulario */
 
 form{
-    min-height: 100px;
-    background: linear-gradient(rgb(5,7,12,0.75), rgb(5,7,12,0.75));
-    background: url(./2.JPG) no-repeat center fixed;
+    
+    min-height: 50px;
+    background: url(./2.JPG) no-repeat center center fixed;
     
     }
+
+   
