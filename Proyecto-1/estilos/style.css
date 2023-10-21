@@ -92,6 +92,15 @@
     border-radius: 10px;
     /*text-decoration: none;*/
 }
+
+.pie div {
+    background-color: rgb(149, 209, 204);
+    margin: 5px;
+    padding: 0px;
+    border-radius: 10px;
+    /*text-decoration: none;*/
+}
+
 /*Pie --------------------------------------------------*/
 
 /*Contenedores Grid ------------------------------------*/
@@ -400,9 +409,9 @@ form{
     }
 
     /* Estilo Api  */
-.contenedor_article_2-index{
+.contenedor_article_2-index {
     font-size: 23px;
-    min width: 50%;
+    min-width: 50%;
     margin: 0 auto;
-    text-align: auto;
+    text-align: center;
 }
