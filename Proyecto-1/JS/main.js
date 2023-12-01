@@ -1,46 +1,126 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const contactForm = document.getElementById("contact-form");
+function Reg_JSON() {
+    var usuario = document.getElementById("usuario").value;
+    var nombre = document.getElementById("nombre").value;
+    var apellido = document.getElementById("apellido").value;
+    var mail = document.getElementById("mail").value;
+    var telefono = document.getElementById("telefono").value;
+    var direccion = document.getElementById("direccion").value;
+    var consulta = document.getElementById("consulta").value;
 
-    contactForm.addEventListener("submit", function(event) {
-        let valid = true;
+    var formData = {
+        usuario: usuario,
+        nombre: nombre,
+        apellido: apellido,
+        mail: mail,
+        telefono: telefono,
+        direccion: direccion,
+        consulta: consulta
+    };
 
-        // Validar el campo Nombre------------------------------------
-        const nombreInput = document.getElementById("nombre");
-        const nombreError = document.getElementById("nombre-error");
-        if (nombreInput.value.trim() === "") {
-            valid = false;
-            nombreError.innerText = "Por favor, ingrese su nombre.";
-            nombreError.style.display = "block";
-        } else {
-            nombreError.style.display = "none";
-        }
+    var jsonData = JSON.stringify(formData);
 
-        // // Validar el campo Correo Electrónico------------------------------------
-        const emailInput = document.getElementById("email");
-        const emailError = document.getElementById("email-error");
-        const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-        if (!emailPattern.test(emailInput.value)) {
-            valid = false;
-            emailError.innerText = "Por favor, ingrese un correo electrónico válido.";
-            emailError.style.display = "block";
-        } else {
-            emailError.style.display = "none";
-        }
+    console.log(jsonData);
+ 
+    var urlServidorBase = 'http://127.0.0.1:5000/registros';
 
-        // Validar el campo Mensaje------------------------------------
-        const mensajeInput = document.getElementById("mensaje");
-        const mensajeError = document.getElementById("mensaje-error");
-        if (mensajeInput.value.trim() === "") {
-            valid = false;
-            mensajeError.innerText = "Por favor, ingrese un mensaje.";
-            mensajeError.style.display = "block";
-        } else {
-            mensajeError.style.display = "none";
-        }
-
-        if (!valid) {
-            event.preventDefault();
-        }
+    fetch(urlServidorBase, {
+        method: 'POST',
+        //mode: 'no-cors',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: jsonData
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Respuesta del servidor:', data);
+    })
+    .catch(error => {
+        console.error('Error al enviar datos al servidor:', error);
     });
-});
+}
+function Act_JSON() {
+    var usuario = document.getElementById("usuario").value;
+    var nombre = document.getElementById("nombre").value;
+    var apellido = document.getElementById("apellido").value;
+    var mail = document.getElementById("mail").value;
+    var telefono = document.getElementById("telefono").value;
+    var direccion = document.getElementById("direccion").value;
+    var consulta = document.getElementById("consulta").value;
 
+    var formData = {
+        nombre: nombre,
+        apellido: apellido,
+        mail: mail,
+        telefono: telefono,
+        direccion: direccion,
+        consulta: consulta
+    };
+
+    var jsonData = JSON.stringify(formData);
+
+    console.log(jsonData);
+
+    var urlServidorBase = 'http://127.0.0.1:5000/registros';
+    var urlServidor = `${urlServidorBase}/${encodeURIComponent(usuario)}`;
+
+    fetch(urlServidor, {
+        method: 'PUT',
+        //mode: 'no-cors',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: jsonData
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Respuesta del servidor:', data);
+    })
+    .catch(error => {
+        console.error('Error al enviar datos al servidor:', error);
+    });
+}
+function Vis_JSON() {
+    var usuario = document.getElementById("usuario").value;
+
+    var urlServidorBase = 'http://127.0.0.1:5000/registros';
+    var urlServidor = `${urlServidorBase}/${encodeURIComponent(usuario)}`;
+
+    fetch(urlServidor, {
+        method: 'GET',
+        //mode: 'no-cors',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: jsonData
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Respuesta del servidor:', data);
+    })
+    .catch(error => {
+        console.error('Error al enviar datos al servidor:', error);
+    });
+}
+function Del_JSON() {
+    var usuario = document.getElementById("usuario").value;
+
+    var urlServidorBase = 'http://127.0.0.1:5000/registros';
+    var urlServidor = `${urlServidorBase}/${encodeURIComponent(usuario)}`;
+
+    fetch(urlServidor, {
+        method: 'DELETE',
+        //mode: 'no-cors',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: jsonData
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Respuesta del servidor:', data);
+    })
+    .catch(error => {
+        console.error('Error al enviar datos al servidor:', error);
+    });
+}

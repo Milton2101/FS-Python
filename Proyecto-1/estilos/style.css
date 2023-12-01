@@ -456,8 +456,12 @@ form {
 .contenedor_article_5{
     grid-area: article_5;
 }
-.contenedor_article_6{
+.contenedor_article_6 {
     grid-area: article_6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: flex-start;
 }
 .contenedor_form{
     display: grid;
@@ -473,6 +477,23 @@ form {
     justify-items: left;
     align-content: center;
     align-items: center;
+    padding: 10px;
+    
+}
+.contenedor_form_2{
+    display: grid;
+    grid-template: auto auto auto auto/ 500px;
+    grid-template-areas:
+    "form1"
+    "form2"
+    "form3"
+    "form4";
+    border: 2px solid black;
+    gap: 5px 5px;
+    justify-content: left;
+    justify-items: left;
+    align-content: flex-start;
+    align-items: flex-start;
     padding: 10px;
     
 }
