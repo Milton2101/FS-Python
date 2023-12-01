@@ -81,7 +81,7 @@ function Act_JSON() {
     });
 }
 function Vis_JSON() {
-    var usuario = document.getElementById("usuario").value;
+    var usuario = document.getElementById("usuario2").value;
 
     var urlServidorBase = 'http://127.0.0.1:5000/registros';
     var urlServidor = `${urlServidorBase}/${encodeURIComponent(usuario)}`;
@@ -92,7 +92,7 @@ function Vis_JSON() {
         headers: {
             'Content-Type': 'application/json'
         },
-        body: jsonData
+        body: null
     })
     .then(response => response.json())
     .then(data => {
@@ -103,7 +103,7 @@ function Vis_JSON() {
     });
 }
 function Del_JSON() {
-    var usuario = document.getElementById("usuario").value;
+    var usuario = document.getElementById("usuario2").value;
 
     var urlServidorBase = 'http://127.0.0.1:5000/registros';
     var urlServidor = `${urlServidorBase}/${encodeURIComponent(usuario)}`;
@@ -114,7 +114,7 @@ function Del_JSON() {
         headers: {
             'Content-Type': 'application/json'
         },
-        body: jsonData
+        body: null
     })
     .then(response => response.json())
     .then(data => {
