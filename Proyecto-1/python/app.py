@@ -6,78 +6,84 @@ app = Flask(__name__)
 
 conexion=MySQL(app)
 
-@app.route('/clientes', methods=['GET'])
-def listar_clientes():
+@app.route('/registros', methods=['GET'])
+def listar_registros():
     try:
         cursor=conexion.connection.cursor()
-        sql="SELECT * FROM clientes"
+        sql="SELECT * FROM registro"
         cursor.execute(sql)
         datos=cursor.fetchall()
-        clientes=[]
+        registros=[]
         for fila in datos:
-            cliente={'usuario':fila[0], 
-                     'nombre':fila[1], 
-                     'apellido':fila[2], 
-                     'mail':fila[3], 
-                     'telefono':fila[4],
-                     'direccion':fila[5],}
-            clientes.append(cliente)
+            registro={'id':fila[0], 
+                     'usuario':fila[1], 
+                     'nombre':fila[2], 
+                     'apellido':fila[3], 
+                     'mail':fila[4],
+                     'telefono':fila[5],
+                     'direccion':fila[6],
+                     'consulta':fila[7],
+                     'tiempo':fila[8]}
+            registros.append(registro)
         print(datos)
-        return jsonify({'clientes': clientes, 'mensaje': "Clientes listados."})
+        return jsonify({'registros': registros, 'mensaje': "Registros listados."})
     except Exception as ex:
         return "Error"
 
-@app.route('/clientes/<usuario>', methods=['GET'])
-def leer_cliente(usuario):
+@app.route('/registros/<usuario>', methods=['GET'])
+def leer_registro(usuario):
     try:
         cursor=conexion.connection.cursor()
-        sql="SELECT * FROM clientes WHERE usuario = '{0}'".format(usuario)
+        sql="SELECT * FROM registro WHERE usuario = '{0}'".format(usuario)
         cursor.execute(sql)
         datos=cursor.fetchone()
         if datos != None:
-            cliente={'usuario':datos[0], 
-                     'nombre':datos[1], 
-                     'apellido':datos[2], 
-                     'mail':datos[3], 
-                     'telefono':datos[4],
-                     'direccion':datos[5],}
-            return jsonify({'cliente': cliente, 'mensaje': "Cliente encontrado."})
+            registro={'id':datos[0], 
+                     'usuario':datos[1], 
+                     'nombre':datos[2], 
+                     'apellido':datos[3], 
+                     'mail':datos[4],
+                     'telefono':datos[5],
+                     'direccion':datos[6],
+                     'consulta':datos[7],
+                     'tiempo':datos[8]}
+            return jsonify({'registro': registro, 'mensaje': "Registro encontrado."})
         else:
-            return jsonify({'mensaje': "Cliente no encontrado."})
+            return jsonify({'mensaje': "Registro no encontrado."})
     except Exception as ex:
         return jsonify({'mensaje': "Error"})
 
-@app.route('/clientes', methods=['POST'])
-def registrar_cliente():
+@app.route('/registros', methods=['POST'])
+def registrar_registro():
     try:
         cursor=conexion.connection.cursor()
-        sql="""INSERT INTO clientes (usuario, nombre, apellido, mail, telefono, direccion)
-        VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}')""".format(request.json['usuario'],request.json['nombre'],request.json['apellido'],request.json['mail'],request.json['telefono'],request.json['direccion'])
+        sql="""INSERT INTO registro (id, usuario, nombre, apellido, mail, telefono, direccion, consulta, tiempo)
+        VALUES (NULL, '{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', current_timestamp())""".format(request.json['usuario'],request.json['nombre'],request.json['apellido'],request.json['mail'],request.json['telefono'],request.json['direccion'],request.json['consulta'])
         cursor.execute(sql)
         conexion.connection.commit()
-        return jsonify({'mensaje': "Cliente registrado."})
+        return jsonify({'mensaje': "Registro registrado."})
     except Exception as ex:
         return jsonify({'mensaje': "Error"})
 
-@app.route('/clientes/<usuario>', methods=['PUT'])
-def actualizar_cliente(usuario):
+@app.route('/registros/<usuario>', methods=['PUT'])
+def actualizar_registro(usuario):
     try:
         cursor=conexion.connection.cursor()
-        sql="""UPDATE clientes SET nombre = '{0}', apellido = '{1}', mail = '{2}', telefono = '{3}', direccion = '{4}' WHERE usuario = '{5}'""".format(request.json['nombre'],request.json['apellido'],request.json['mail'],request.json['telefono'],request.json['direccion'], usuario)
+        sql="""UPDATE registro SET nombre = '{0}', apellido = '{1}', mail = '{2}', telefono = '{3}', direccion = '{4}', consulta = '{5}', tiempo = current_timestamp() WHERE usuario = '{6}'""".format(request.json['nombre'],request.json['apellido'],request.json['mail'],request.json['telefono'],request.json['direccion'],request.json['consulta'], usuario)
         cursor.execute(sql)
         conexion.connection.commit()
-        return jsonify({'mensaje': "Cliente actualizado."})
+        return jsonify({'mensaje': "Registro actualizado."})
     except Exception as ex:
         return jsonify({'mensaje': "Error"})
 
-@app.route('/clientes/<usuario>', methods=['DELETE'])
-def eliminar_cliente(usuario):
+@app.route('/registros/<usuario>', methods=['DELETE'])
+def eliminar_registro(usuario):
     try:
         cursor=conexion.connection.cursor()
-        sql="DELETE FROM clientes WHERE usuario = '{0}'".format(usuario)
+        sql="DELETE FROM registro WHERE usuario = '{0}'".format(usuario)
         cursor.execute(sql)
         conexion.connection.commit()
-        return jsonify({'mensaje': "Cliente eliminado."})
+        return jsonify({'mensaje': "Registros eliminado."})
     except Exception as ex:
         return jsonify({'mensaje': "Error"})
 
