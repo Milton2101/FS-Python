@@ -31,10 +31,10 @@
     width: 100%;
     text-align: center;
 }
-@keyframes logo_anim {
+/*@keyframes logo_anim {
     0% {transform: rotateZ(0deg);}
     100% {transform: rotateZ(360deg);}
-}
+}*/
 
 /*Encabezado--------------------------------------------*/
 
@@ -463,6 +463,20 @@ form {
     align-items: center;
     align-self: flex-start;
 }
+.caja_json {
+    grid-area: caja;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: flex-start;
+}
+#cajaRespuesta {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    white-space: pre-wrap;
+    font-family: 'Courier New', monospace;
+}
 .contenedor_form{
     display: grid;
     grid-template: auto auto auto auto/ 500px;
@@ -501,12 +515,13 @@ form {
 @media (max-width: 10000px) {
     .container_form {
         display: grid;
-        grid-template: auto auto auto auto auto / 50% 50%;
+        grid-template: auto auto auto auto auto auto/ 50% 50%;
         grid-template-areas:
         "header header"
         "nav nav"
         "article_4 article_4"
         "article_5 article_6"
+        "article_5 caja"
         "footer footer";
     }
 }
@@ -514,12 +529,13 @@ form {
 @media (max-width: 1300px) {
     .container_form {
         display: grid;
-        grid-template: auto auto auto auto auto / 50% 50%;
+        grid-template: auto auto auto auto auto auto/ 50% 50%;
         grid-template-areas:
         "header header"
         "nav nav"
         "article_4 article_4"
         "article_5 article_6"
+        "article_5 caja"
         "footer footer";
     }
 }
@@ -527,13 +543,15 @@ form {
 @media (max-width: 1065px) {
     .container_form {
         display: grid;
-        grid-template: auto auto auto auto auto auto/ auto;
+        grid-template: auto auto auto auto auto auto auto/ auto;
         grid-template-areas:
         "header"
         "nav"
         "article_4"
         "article_5"
         "article_6"
+        "caja"
         "footer";
     }
 }
+

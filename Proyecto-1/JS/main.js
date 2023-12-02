@@ -33,11 +33,24 @@ function Reg_JSON() {
     })
     .then(response => response.json())
     .then(data => {
-        console.log('Respuesta del servidor:', data);
+        //console.log('Respuesta del servidor:', data);
+        mostrarConfirmacionEnCaja();
     })
     .catch(error => {
         console.error('Error al enviar datos al servidor:', error);
     });
+    
+    function mostrarConfirmacionEnCaja() {
+        var caja = document.getElementById('cajaRespuesta');
+
+        if (caja) {
+            var mensajeConfirmacion = '¡Registro exitoso!';
+
+            caja.textContent = mensajeConfirmacion;
+        } else {
+            console.error('No se encontró la caja de respuesta en el DOM.');
+        }
+    }
 }
 function Act_JSON() {
     var usuario = document.getElementById("usuario").value;
@@ -74,11 +87,24 @@ function Act_JSON() {
     })
     .then(response => response.json())
     .then(data => {
-        console.log('Respuesta del servidor:', data);
+        //console.log('Respuesta del servidor:', data);
+        mostrarConfirmacionEnCaja();
     })
     .catch(error => {
         console.error('Error al enviar datos al servidor:', error);
     });
+    
+    function mostrarConfirmacionEnCaja() {
+        var caja = document.getElementById('cajaRespuesta');
+
+        if (caja) {
+            var mensajeConfirmacion = '¡Actualización exitosa!';
+
+            caja.textContent = mensajeConfirmacion;
+        } else {
+            console.error('No se encontró la caja de respuesta en el DOM.');
+        }
+    }
 }
 function Vis_JSON() {
     var usuario = document.getElementById("usuario2").value;
@@ -96,11 +122,31 @@ function Vis_JSON() {
     })
     .then(response => response.json())
     .then(data => {
-        console.log('Respuesta del servidor:', data);
+        //console.log('Respuesta del servidor:', data);
+        mostrarRespuestaEnCaja(data);
     })
     .catch(error => {
         console.error('Error al enviar datos al servidor:', error);
     });
+    
+    function mostrarRespuestaEnCaja(data) {
+        
+        var caja = document.getElementById('cajaRespuesta');
+
+        if (caja) {
+            if (data.registro) {
+                var registro = data.registro;
+    
+                var cadenaFormateada = `Usuario: ${registro.usuario}\nTiempo: ${registro.tiempo}\nConsulta: ${registro.consulta}`;
+        
+                caja.textContent = cadenaFormateada;
+            } else {
+                console.error('La propiedad "registro" no está presente en la respuesta del servidor.');
+            }
+        } else {
+            console.error('No se encontró la caja de respuesta en el DOM.');
+        }
+    }
 }
 function Del_JSON() {
     var usuario = document.getElementById("usuario2").value;
@@ -118,9 +164,22 @@ function Del_JSON() {
     })
     .then(response => response.json())
     .then(data => {
-        console.log('Respuesta del servidor:', data);
+        //console.log('Respuesta del servidor:', data);
+        mostrarConfirmacionEnCaja();
     })
     .catch(error => {
         console.error('Error al enviar datos al servidor:', error);
     });
+    
+    function mostrarConfirmacionEnCaja() {
+        var caja = document.getElementById('cajaRespuesta');
+
+        if (caja) {
+            var mensajeConfirmacion = '¡Eliminación exitosa!';
+
+            caja.textContent = mensajeConfirmacion;
+        } else {
+            console.error('No se encontró la caja de respuesta en el DOM.');
+        }
+    }
 }
