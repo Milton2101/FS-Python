@@ -39,7 +39,6 @@ const app = Vue.createApp({
         
             fetch(urlServidorBase, {
                 method: 'POST',
-                //mode: 'no-cors',
                 headers: {
                     'Content-Type': 'application/json'
                 },
@@ -47,8 +46,7 @@ const app = Vue.createApp({
             })
             .then(response => response.json())
             .then(data => {
-                //console.log('Respuesta del servidor:', data);
-                mostrarConfirmacionEnCaja();
+                this.cajaRespuesta = JSON.stringify(data, null, 2);
             })
             .catch(error => {
                 console.error('Error al enviar datos al servidor:', error);
@@ -59,7 +57,6 @@ const app = Vue.createApp({
         
                 if (caja) {
                     var mensajeConfirmacion = '¡Registro exitoso!';
-        
                     caja.textContent = mensajeConfirmacion;
                 } else {
                     console.error('No se encontró la caja de respuesta en el DOM.');
@@ -93,7 +90,6 @@ const app = Vue.createApp({
         
             fetch(urlServidor, {
                 method: 'PUT',
-                //mode: 'no-cors',
                 headers: {
                     'Content-Type': 'application/json'
                 },
@@ -101,7 +97,7 @@ const app = Vue.createApp({
             })
             .then(response => response.json())
             .then(data => {
-                //console.log('Respuesta del servidor:', data);
+                console.log('Respuesta del servidor:', data);
                 mostrarConfirmacionEnCaja();
             })
             .catch(error => {
@@ -113,7 +109,6 @@ const app = Vue.createApp({
         
                 if (caja) {
                     var mensajeConfirmacion = '¡Actualización exitosa!';
-        
                     caja.textContent = mensajeConfirmacion;
                 } else {
                     console.error('No se encontró la caja de respuesta en el DOM.');
@@ -128,7 +123,6 @@ const app = Vue.createApp({
         
             fetch(urlServidor, {
                 method: 'GET',
-                //mode: 'no-cors',
                 headers: {
                     'Content-Type': 'application/json'
                 },
@@ -136,7 +130,7 @@ const app = Vue.createApp({
             })
             .then(response => response.json())
             .then(data => {
-                //console.log('Respuesta del servidor:', data);
+                console.log('Respuesta del servidor:', data);
                 mostrarRespuestaEnCaja(data);
             })
             .catch(error => {
@@ -150,9 +144,7 @@ const app = Vue.createApp({
                 if (caja) {
                     if (data.registro) {
                         var registro = data.registro;
-            
                         var cadenaFormateada = `Usuario: ${registro.usuario}\nTiempo: ${registro.tiempo}\nConsulta: ${registro.consulta}`;
-                
                         caja.textContent = cadenaFormateada;
                     } else {
                         console.error('La propiedad "registro" no está presente en la respuesta del servidor.');
@@ -170,7 +162,6 @@ const app = Vue.createApp({
         
             fetch(urlServidor, {
                 method: 'DELETE',
-                //mode: 'no-cors',
                 headers: {
                     'Content-Type': 'application/json'
                 },
@@ -178,7 +169,7 @@ const app = Vue.createApp({
             })
             .then(response => response.json())
             .then(data => {
-                //console.log('Respuesta del servidor:', data);
+                console.log('Respuesta del servidor:', data);
                 mostrarConfirmacionEnCaja();
             })
             .catch(error => {
@@ -190,7 +181,6 @@ const app = Vue.createApp({
         
                 if (caja) {
                     var mensajeConfirmacion = '¡Eliminación exitosa!';
-        
                     caja.textContent = mensajeConfirmacion;
                 } else {
                     console.error('No se encontró la caja de respuesta en el DOM.');

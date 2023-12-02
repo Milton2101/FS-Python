@@ -473,9 +473,15 @@ form {
 #cajaRespuesta {
     border: 1px solid #ccc;
     padding: 10px;
-    margin: 10px;
-    white-space: pre-wrap;
-    font-family: 'Courier New', monospace;
+    margin: 20px auto;
+    max-width: 500px;
+    overflow: auto;
+    border-radius: 5px;
+    background-color: #f8f8f8;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    font-family: 'Arial', sans-serif;
+    white-space: pre-line; /* o white-space: pre-wrap; */
 }
 .contenedor_form{
     display: grid;
