@@ -33,7 +33,7 @@ function Reg_JSON() {
     })
     .then(response => response.json())
     .then(data => {
-        //console.log('Respuesta del servidor:', data);
+        console.log('Respuesta del servidor:', data);
         mostrarConfirmacionEnCaja();
     })
     .catch(error => {
@@ -87,7 +87,7 @@ function Act_JSON() {
     })
     .then(response => response.json())
     .then(data => {
-        //console.log('Respuesta del servidor:', data);
+        console.log('Respuesta del servidor:', data);
         mostrarConfirmacionEnCaja();
     })
     .catch(error => {
@@ -122,7 +122,7 @@ function Vis_JSON() {
     })
     .then(response => response.json())
     .then(data => {
-        //console.log('Respuesta del servidor:', data);
+        console.log('Respuesta del servidor:', data);
         mostrarRespuestaEnCaja(data);
     })
     .catch(error => {
@@ -164,7 +164,7 @@ function Del_JSON() {
     })
     .then(response => response.json())
     .then(data => {
-        //console.log('Respuesta del servidor:', data);
+        console.log('Respuesta del servidor:', data);
         mostrarConfirmacionEnCaja();
     })
     .catch(error => {
